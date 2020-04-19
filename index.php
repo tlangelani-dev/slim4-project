@@ -23,4 +23,9 @@ $app->get('/', function (Request $request, Response $response) {
     return $response;
 });
 
+$app->get('/about', function (Request $request, Response $response) {
+    $response->getBody()->write('About Page');
+    return $response;
+});
+
 $app->run();
