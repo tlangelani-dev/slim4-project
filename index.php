@@ -1,11 +1,15 @@
 <?php
 
+use DI\Container;
 use Slim\Factory\AppFactory;
 use Slim\Middleware\ErrorMiddleware;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
+
+$container = new Container();
+AppFactory::setContainer($container);
 
 $app = AppFactory::create();
 
